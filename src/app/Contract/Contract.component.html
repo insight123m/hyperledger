@@ -1,0 +1,353 @@
+<div class="modal fade" id="addAssetModal" tabindex="-1" role="dialog" aria-labelledby="addAssetModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addAssetModalLabel">Add Asset</h4>
+      </div>
+      <form [formGroup]="myForm">
+        <div class="modal-body">
+
+
+          
+
+            
+              <div class="form-group text-left">
+                <label for="contractId">contractId</label>
+                
+                  <input formControlName="contractId" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="grower">grower</label>
+                
+                    <textarea formControlName="grower" class="form-control" rows="3"></textarea>
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="shipper">shipper</label>
+                
+                    <textarea formControlName="shipper" class="form-control" rows="3"></textarea>
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="importer">importer</label>
+                
+                    <textarea formControlName="importer" class="form-control" rows="3"></textarea>
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="arrivalDateTime">arrivalDateTime</label>
+                
+                  <input formControlName="arrivalDateTime" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="unitPrice">unitPrice</label>
+                
+                  <input formControlName="unitPrice" type="number" step='any' class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="minTemperature">minTemperature</label>
+                
+                  <input formControlName="minTemperature" type="number" step='any' class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="maxTemperature">maxTemperature</label>
+                
+                  <input formControlName="maxTemperature" type="number" step='any' class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="minPenaltyFactor">minPenaltyFactor</label>
+                
+                  <input formControlName="minPenaltyFactor" type="number" step='any' class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="maxPenaltyFactor">maxPenaltyFactor</label>
+                
+                  <input formControlName="maxPenaltyFactor" type="number" step='any' class="form-control">
+                
+              </div>
+            
+          
+
+        </div>
+        <div class="modal-footer">
+          <button (click)="addAsset(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="updateAssetModal" tabindex="-1" role="dialog" aria-labelledby="updateAssetModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="updateAssetModalLabel">Update Asset</h4>
+      </div>
+      <form [formGroup]="myForm">
+        <div class="modal-body">
+
+
+          
+            <div class="form-group text-left">
+              <label for="contractId">contractId</label>
+
+              
+                <input [ngModel]="contractId"formControlName="contractId" type="text" class="form-control">
+              
+
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="grower">grower</label>
+
+              
+                
+                  <textarea [ngModel]="grower" formControlName="grower" class="form-control" rows="3"></textarea>
+                
+              
+
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="shipper">shipper</label>
+
+              
+                
+                  <textarea [ngModel]="shipper" formControlName="shipper" class="form-control" rows="3"></textarea>
+                
+              
+
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="importer">importer</label>
+
+              
+                
+                  <textarea [ngModel]="importer" formControlName="importer" class="form-control" rows="3"></textarea>
+                
+              
+
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="arrivalDateTime">arrivalDateTime</label>
+
+              
+                <input [ngModel]="arrivalDateTime"formControlName="arrivalDateTime" type="text" class="form-control">
+              
+
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="unitPrice">unitPrice</label>
+
+              
+                <input [ngModel]="unitPrice" formControlName="unitPrice" type="number" step='any' class="form-control">
+              
+
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="minTemperature">minTemperature</label>
+
+              
+                <input [ngModel]="minTemperature" formControlName="minTemperature" type="number" step='any' class="form-control">
+              
+
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="maxTemperature">maxTemperature</label>
+
+              
+                <input [ngModel]="maxTemperature" formControlName="maxTemperature" type="number" step='any' class="form-control">
+              
+
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="minPenaltyFactor">minPenaltyFactor</label>
+
+              
+                <input [ngModel]="minPenaltyFactor" formControlName="minPenaltyFactor" type="number" step='any' class="form-control">
+              
+
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="maxPenaltyFactor">maxPenaltyFactor</label>
+
+              
+                <input [ngModel]="maxPenaltyFactor" formControlName="maxPenaltyFactor" type="number" step='any' class="form-control">
+              
+
+            </div>
+          
+
+
+        </div>
+        <div class="modal-footer">
+          <button (click)="updateAsset(myForm)" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="deleteAssetModal" tabindex="-1" role="dialog" aria-labelledby="deleteAssetModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="deleteAssetModalLabel">Delete Asset</h4>
+      </div>
+      <form [formGroup]="myForm" (ngSubmit)="deleteAsset()">
+        <div class="modal-body">
+          Are you sure you want to delete this asset?
+        </div>
+        <div class="modal-footer">
+          <button (click)="deleteAsset()" type="submit" class="btn btn-danger" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+	<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+		<strong>Error:</strong> {{errorMessage}}
+	</div>
+  <h1 id='assetName'>Contract</h1>
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <button (click)="resetForm()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAssetModal">Add Asset</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-responsive table-striped">
+        <thead class="thead">
+          <tr class="thead-cols">
+            
+                <th class="info">contractId</th>
+            
+                <th class="info">grower</th>
+            
+                <th class="info">shipper</th>
+            
+                <th class="info">importer</th>
+            
+                <th class="info">arrivalDateTime</th>
+            
+                <th class="info">unitPrice</th>
+            
+                <th class="info">minTemperature</th>
+            
+                <th class="info">maxTemperature</th>
+            
+                <th class="info">minPenaltyFactor</th>
+            
+                <th class="info">maxPenaltyFactor</th>
+            
+              <th class="info">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let asset of allAssets">
+
+            
+                <td>{{asset.contractId}}</td>
+            
+                <td>{{asset.grower}}</td>
+            
+                <td>{{asset.shipper}}</td>
+            
+                <td>{{asset.importer}}</td>
+            
+                <td>{{asset.arrivalDateTime}}</td>
+            
+                <td>{{asset.unitPrice}}</td>
+            
+                <td>{{asset.minTemperature}}</td>
+            
+                <td>{{asset.maxTemperature}}</td>
+            
+                <td>{{asset.minPenaltyFactor}}</td>
+            
+                <td>{{asset.maxPenaltyFactor}}</td>
+            
+            <td>
+              <button (click)="getForm(asset.contractId);" type="button" class="btn btn-success" data-toggle="modal" data-target="#updateAssetModal">Update Asset</button>
+
+              <button (click)="setId(asset.contractId);" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteAssetModal">Delete Asset</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

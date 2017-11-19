@@ -58,6 +58,14 @@ export class ContractComponent implements OnInit {
           maxPenaltyFactor = new FormControl("", Validators.required);
         
   
+      
+          delayPenaltyFactor = new FormControl("", Validators.required);
+        
+  
+      
+          qualityPenaltyFactor = new FormControl("", Validators.required);
+        
+  
 
 
   constructor(private serviceContract:ContractService, fb: FormBuilder) {
@@ -100,7 +108,15 @@ export class ContractComponent implements OnInit {
         
     
         
-          maxPenaltyFactor:this.maxPenaltyFactor
+          maxPenaltyFactor:this.maxPenaltyFactor,
+        
+    
+        
+          delayPenaltyFactor:this.delayPenaltyFactor,
+        
+    
+        
+          qualityPenaltyFactor:this.qualityPenaltyFactor
         
     
     });
@@ -200,7 +216,15 @@ export class ContractComponent implements OnInit {
         
       
         
-          "maxPenaltyFactor":this.maxPenaltyFactor.value
+          "maxPenaltyFactor":this.maxPenaltyFactor.value,
+        
+      
+        
+          "delayPenaltyFactor":this.delayPenaltyFactor.value,
+        
+      
+        
+          "qualityPenaltyFactor":this.qualityPenaltyFactor.value
         
       
     };
@@ -244,7 +268,15 @@ export class ContractComponent implements OnInit {
         
       
         
-          "maxPenaltyFactor":null
+          "maxPenaltyFactor":null,
+        
+      
+        
+          "delayPenaltyFactor":null,
+        
+      
+        
+          "qualityPenaltyFactor":null
         
       
     });
@@ -292,7 +324,15 @@ export class ContractComponent implements OnInit {
         
       
         
-          "maxPenaltyFactor":null 
+          "maxPenaltyFactor":null,
+        
+      
+        
+          "delayPenaltyFactor":null,
+        
+      
+        
+          "qualityPenaltyFactor":null 
         
       
       });
@@ -366,7 +406,19 @@ export class ContractComponent implements OnInit {
     
         
           
-            "maxPenaltyFactor":this.maxPenaltyFactor.value
+            "maxPenaltyFactor":this.maxPenaltyFactor.value,
+          
+        
+    
+        
+          
+            "delayPenaltyFactor":this.delayPenaltyFactor.value,
+          
+        
+    
+        
+          
+            "qualityPenaltyFactor":this.qualityPenaltyFactor.value
           
         
     
@@ -460,7 +512,15 @@ export class ContractComponent implements OnInit {
           
         
           
-            "maxPenaltyFactor":null 
+            "maxPenaltyFactor":null,
+          
+        
+          
+            "delayPenaltyFactor":null,
+          
+        
+          
+            "qualityPenaltyFactor":null 
           
         
       };
@@ -548,6 +608,22 @@ export class ContractComponent implements OnInit {
           formObject.maxPenaltyFactor = null;
         }
       
+        if(result.delayPenaltyFactor){
+          
+            formObject.delayPenaltyFactor = result.delayPenaltyFactor;
+          
+        }else{
+          formObject.delayPenaltyFactor = null;
+        }
+      
+        if(result.qualityPenaltyFactor){
+          
+            formObject.qualityPenaltyFactor = result.qualityPenaltyFactor;
+          
+        }else{
+          formObject.qualityPenaltyFactor = null;
+        }
+      
 
       this.myForm.setValue(formObject);
 
@@ -606,7 +682,15 @@ export class ContractComponent implements OnInit {
         
       
         
-          "maxPenaltyFactor":null 
+          "maxPenaltyFactor":null,
+        
+      
+        
+          "delayPenaltyFactor":null,
+        
+      
+        
+          "qualityPenaltyFactor":null 
         
       
       });

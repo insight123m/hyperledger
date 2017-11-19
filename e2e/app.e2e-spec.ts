@@ -15,9 +15,9 @@ describe('Starting tests for angular-app', function() {
     })
   });
 
-  it('navbar-brand should be joule@0.1.9',() => {
+  it('navbar-brand should be hackathon@0.1.10',() => {
     var navbarBrand = element(by.css('.navbar-brand')).getWebElement();
-    expect(navbarBrand.getText()).toBe('joule@0.1.9');
+    expect(navbarBrand.getText()).toBe('hackathon@0.1.10');
   });
 
   
@@ -27,10 +27,10 @@ describe('Starting tests for angular-app', function() {
       expect(assetName.getText()).toBe('Shipment');
     });
 
-    it('Shipment table should have 7 columns',() => {
+    it('Shipment table should have 8 columns',() => {
       page.navigateTo('/Shipment');
       element.all(by.css('.thead-cols th')).then(function(arr) {
-        expect(arr.length).toEqual(7); // Addition of 1 for 'Action' column
+        expect(arr.length).toEqual(8); // Addition of 1 for 'Action' column
       });
     });
 
@@ -41,10 +41,10 @@ describe('Starting tests for angular-app', function() {
       expect(assetName.getText()).toBe('Contract');
     });
 
-    it('Contract table should have 11 columns',() => {
+    it('Contract table should have 13 columns',() => {
       page.navigateTo('/Contract');
       element.all(by.css('.thead-cols th')).then(function(arr) {
-        expect(arr.length).toEqual(11); // Addition of 1 for 'Action' column
+        expect(arr.length).toEqual(13); // Addition of 1 for 'Action' column
       });
     });
 

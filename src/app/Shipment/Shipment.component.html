@@ -7,173 +7,169 @@
       </div>
       <form [formGroup]="myForm">
         <div class="modal-body">
-
-
-          
-
-            
               <div class="form-group text-left">
                 <label for="shipmentId">shipmentId</label>
-                
                   <input formControlName="shipmentId" type="text" class="form-control">
-                
               </div>
-            
-          
-
-            
               <label for="type">type</label>
               <div class="checkbox">
-                
                   <label>
                     <input
-                      
                         formControlName="type"
-                      
                       name="type"
                       value="BANANAS"
                       type="radio"
-                      
                     />
                     BANANAS
                   </label>
-                
                   <label>
                     <input
-                      
                         formControlName="type"
-                      
                       name="type"
                       value="APPLES"
                       type="radio"
-                      
                     />
                     APPLES
                   </label>
-                
                   <label>
                     <input
-                      
                         formControlName="type"
-                      
                       name="type"
                       value="PEARS"
                       type="radio"
-                      
                     />
                     PEARS
                   </label>
-                
                   <label>
                     <input
-                      
                         formControlName="type"
-                      
                       name="type"
                       value="PEACHES"
                       type="radio"
-                      
                     />
                     PEACHES
                   </label>
-                
                   <label>
                     <input
-                      
                         formControlName="type"
-                      
                       name="type"
                       value="COFFEE"
                       type="radio"
-                      
                     />
                     COFFEE
                   </label>
-                
               </div>
-            
-          
-
-            
               <label for="status">status</label>
               <div class="checkbox">
-                
                   <label>
                     <input
-                      
                         formControlName="status"
-                      
                       name="status"
                       value="CREATED"
                       type="radio"
-                      
                     />
                     CREATED
                   </label>
-                
                   <label>
                     <input
-                      
                         formControlName="status"
-                      
                       name="status"
                       value="IN_TRANSIT"
                       type="radio"
-                      
                     />
                     IN_TRANSIT
                   </label>
-                
                   <label>
                     <input
-                      
                         formControlName="status"
-                      
                       name="status"
                       value="ARRIVED"
                       type="radio"
-                      
                     />
                     ARRIVED
                   </label>
-                
               </div>
-            
-          
-
-            
+              <div class="form-group text-left">
+                <label for="qualityReadings">qualityReadings</label>
+                    <textarea formControlName="qualityReadings" class="form-control" rows="3"></textarea>
+              </div>
               <div class="form-group text-left">
                 <label for="unitCount">unitCount</label>
-                
                   <input formControlName="unitCount" type="number" class="form-control">
-                
               </div>
-            
-          
-
-            
               <div class="form-group text-left">
                 <label for="temperatureReadings">temperatureReadings</label>
-                
                     <textarea formControlName="temperatureReadings" class="form-control" rows="3"></textarea>
-                
               </div>
-            
-          
-
-            
               <div class="form-group text-left">
                 <label for="contract">contract</label>
-                
                     <textarea formControlName="contract" class="form-control" rows="3"></textarea>
-                
               </div>
-            
-          
-
         </div>
         <div class="modal-footer">
           <button (click)="addAsset(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="addQualityReadingModal" tabindex="-1" role="dialog" aria-labelledby="addQualityReadingModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addAssetModalLabel">Add Quality Reading</h4>
+      </div>
+      <form [formGroup]="qualityReadingForm">
+        <div class="modal-body">
+          <div class="form-group text-left">
+            <label for="shipmentId">shipmentId</label>
+              <input formControlName="shipmentId" type="text" class="form-control">
+          </div>
+          <label for="shipmentQuality">quality</label>
+          <div class="checkbox">
+            <label>
+              <input
+                formControlName="shipmentQuality"
+                name="shipmentQuality"
+                value="EXCELLENT"
+                type="radio"
+              />
+              EXCELLENT
+            </label>
+            <label>
+              <input
+                formControlName="shipmentQuality"
+                name="shipmentQuality"
+                value="GOOD"
+                type="radio"
+              />
+              GOOD
+            </label>
+            <label>
+              <input
+                formControlName="shipmentQuality"
+                name="shipmentQuality"
+                value="AVERAGE"
+                type="radio"
+              />
+              AVERAGE
+            </label>
+            <label>
+              <input
+                formControlName="shipmentQuality"
+                name="shipmentQuality"
+                value="BAD"
+                type="radio"
+              />
+              BAD
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button (click)="addQualityReading(qualityReadingForm);" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </form>
@@ -195,189 +191,200 @@
         <div class="modal-body">
 
 
-          
+
             <div class="form-group text-left">
               <label for="shipmentId">shipmentId</label>
 
-              
+
                 <input [ngModel]="shipmentId"formControlName="shipmentId" type="text" class="form-control">
-              
+
 
             </div>
-          
+
             <div class="form-group text-left">
               <label for="type">type</label>
 
-              
-                
+
+
                   <div class="row">
                     <div class="col-xs-12 checkbox">
-                    
+
                       <label>
                         <input
-                          
+
                             formControlName="type"
                             [ngModel]="type"
-                          
+
                           name="type"
                           value="BANANAS"
                           type="radio"
-                          
+
                         />
                         BANANAS
                       </label>
-                    
+
                       <label>
                         <input
-                          
+
                             formControlName="type"
                             [ngModel]="type"
-                          
+
                           name="type"
                           value="APPLES"
                           type="radio"
-                          
+
                         />
                         APPLES
                       </label>
-                    
+
                       <label>
                         <input
-                          
+
                             formControlName="type"
                             [ngModel]="type"
-                          
+
                           name="type"
                           value="PEARS"
                           type="radio"
-                          
+
                         />
                         PEARS
                       </label>
-                    
+
                       <label>
                         <input
-                          
+
                             formControlName="type"
                             [ngModel]="type"
-                          
+
                           name="type"
                           value="PEACHES"
                           type="radio"
-                          
+
                         />
                         PEACHES
                       </label>
-                    
+
                       <label>
                         <input
-                          
+
                             formControlName="type"
                             [ngModel]="type"
-                          
+
                           name="type"
                           value="COFFEE"
                           type="radio"
-                          
+
                         />
                         COFFEE
                       </label>
-                    
+
                     </div>
                   </div>
-                
-              
+
+
 
             </div>
-          
+
             <div class="form-group text-left">
               <label for="status">status</label>
 
-              
-                
+
+
                   <div class="row">
                     <div class="col-xs-12 checkbox">
-                    
+
                       <label>
                         <input
-                          
+
                             formControlName="status"
                             [ngModel]="status"
-                          
+
                           name="status"
                           value="CREATED"
                           type="radio"
-                          
+
                         />
                         CREATED
                       </label>
-                    
+
                       <label>
                         <input
-                          
+
                             formControlName="status"
                             [ngModel]="status"
-                          
+
                           name="status"
                           value="IN_TRANSIT"
                           type="radio"
-                          
+
                         />
                         IN_TRANSIT
                       </label>
-                    
+
                       <label>
                         <input
-                          
+
                             formControlName="status"
                             [ngModel]="status"
-                          
+
                           name="status"
                           value="ARRIVED"
                           type="radio"
-                          
+
                         />
                         ARRIVED
                       </label>
-                    
+
                     </div>
                   </div>
-                
-              
+
+
 
             </div>
-          
+
+            <div class="form-group text-left">
+              <label for="qualityReadings">qualityReadings</label>
+
+
+
+                  <textarea [ngModel]="qualityReadings" formControlName="qualityReadings" class="form-control" rows="3"></textarea>
+
+
+
+            </div>
+
             <div class="form-group text-left">
               <label for="unitCount">unitCount</label>
 
-              
+
                 <input [ngModel]="unitCount" formControlName="unitCount" type="number" class="form-control">
-              
+
 
             </div>
-          
+
             <div class="form-group text-left">
               <label for="temperatureReadings">temperatureReadings</label>
 
-              
-                
+
+
                   <textarea [ngModel]="temperatureReadings" formControlName="temperatureReadings" class="form-control" rows="3"></textarea>
-                
-              
+
+
 
             </div>
-          
+
             <div class="form-group text-left">
               <label for="contract">contract</label>
 
-              
-                
+
+
                   <textarea [ngModel]="contract" formControlName="contract" class="form-control" rows="3"></textarea>
-                
-              
+
+
 
             </div>
-          
+
 
 
         </div>
@@ -397,12 +404,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="deleteAssetModalLabel">Delete Asset</h4>
+        <h4 class="modal-title" id="deleteAssetModalLabel">Are you sure you want to delete this asset?</h4>
       </div>
       <form [formGroup]="myForm" (ngSubmit)="deleteAsset()">
-        <div class="modal-body">
+        <!-- <div class="modal-body">
           Are you sure you want to delete this asset?
-        </div>
+        </div> -->
         <div class="modal-footer">
           <button (click)="deleteAsset()" type="submit" class="btn btn-danger" data-dismiss="modal">Yes</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
@@ -411,16 +418,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 
 <div class="container">
 	<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
@@ -433,51 +430,85 @@
     </div>
   </div>
   <br>
-  <div class="row">
-    <div class="col-md-12">
-      <table class="table table-bordered table-responsive table-striped">
-        <thead class="thead">
-          <tr class="thead-cols">
-            
-                <th class="info">shipmentId</th>
-            
-                <th class="info">type</th>
-            
-                <th class="info">status</th>
-            
-                <th class="info">unitCount</th>
-            
-                <th class="info">temperatureReadings</th>
-            
-                <th class="info">contract</th>
-            
-              <th class="info">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let asset of allAssets">
-
-            
-                <td>{{asset.shipmentId}}</td>
-            
-                <td>{{asset.type}}</td>
-            
-                <td>{{asset.status}}</td>
-            
-                <td>{{asset.unitCount}}</td>
-            
-                <td>{{asset.temperatureReadings}}</td>
-            
-                <td>{{asset.contract}}</td>
-            
-            <td>
-              <button (click)="getForm(asset.shipmentId);" type="button" class="btn btn-success" data-toggle="modal" data-target="#updateAssetModal">Update Asset</button>
-
-              <button (click)="setId(asset.shipmentId);" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteAssetModal">Delete Asset</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <ngb-accordion #acc="ngbAccordion">
+    <ngb-panel *ngFor="let asset of allAssets">
+      <ng-template ngbPanelTitle>
+        <div class="item-border cursor-pointer" (click)="getContractByShipment(asset.shipmentId);">
+          <div class="col-md-2 font-bold text-color">
+            {{asset.shipmentId}}
+          </div>
+          <div class="col-md-2 font-bold text-color">
+            {{asset.type}} ({{asset.unitCount}})
+          </div>
+          <div class="col-md-1 font-bold text-color">
+            {{asset.status}}
+          </div>
+          <div class="col-md-1 float-right font-bold">
+            <i class="fa fa-pencil fa-lg text-color" (click)="getForm(asset.shipmentId);" data-toggle="modal" data-target="#updateAssetModal" aria-hidden="true"> </i>
+            <i class="fa fa-trash fa-lg text-color" (click)="setId(asset.shipmentId);" data-toggle="modal" data-target="#deleteAssetModal" aria-hidden="true"> </i>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <div class="block-size">
+          <div class="col-md-12 font-bold text-color sub-heading">
+            <div class="font-bold text-color align-center sub-heading">
+              <span class="col-md-12 border-bottom">Contract Details</span>
+              <span class="col-md-3 small-font">Contract ID: </span>
+              <span class="col-md-3 small-font">{{asset.contract.contractId}}</span>
+              <span class="col-md-3 small-font">Minimum Temp: </span>
+              <span class="col-md-3 small-font">{{asset.contract.minTemperature}}</span>
+              <span class="col-md-3 small-font">Maximum Temp: </span>
+              <span class="col-md-3 small-font">{{asset.contract.maxTemperature}}</span>
+              <span class="col-md-3 small-font">Min Penalty: </span>
+              <span class="col-md-3 small-font">{{asset.contract.minPenaltyFactor}}</span>
+              <span class="col-md-3 small-font">Max Penalty: </span>
+              <span class="col-md-3 small-font">{{asset.contract.maxPenaltyFactor}}</span>
+              <span class="col-md-3 small-font">Quality Penalty: </span>
+              <span class="col-md-3 small-font">{{asset.contract.qualityPenaltyFactor}}</span>
+              <span class="col-md-3 small-font">Grower: </span>
+              <span class="col-md-3 small-font">{{asset.contract.grower.split('resource:org.acme.shipping.perishable.Grower#')[1]}}</span>
+              <span class="col-md-3 small-font">Importer: </span>
+              <span class="col-md-3 small-font">{{asset.contract.importer.split('resource:org.acme.shipping.perishable.Importer#')[1]}}</span>
+              <span class="col-md-3 small-font">Shipper: </span>
+              <span class="col-md-3 small-font">{{asset.contract.shipper.split('resource:org.acme.shipping.perishable.Shipper#')[1]}}</span>
+            </div>
+          </div>
+          <div class="col-md-6 font-bold text-color align-center sub-heading">
+            <span class="col-md-12 border-bottom">
+              Quality Readings
+              <i class="fa fa-pencil fa-plus-circle text-color" data-toggle="modal" data-target="#addQualityReadingModal" aria-hidden="true"> </i>
+            </span>
+            <div class="col-md-6 font-bold text-color align-center sub-heading">
+              <span class="small-font">Quality</span>
+            </div>
+            <div class="col-md-6 font-bold text-color align-center sub-heading">
+              <span class="small-font">Timestamp</span>
+            </div>
+            <div class="col-md-12 font-bold text-color align-center sub-heading">
+              <span *ngFor="let quality of asset.qualityReadings">
+                <span class="col-md-6 small-font">{{quality.quality}}</span>
+                <span class="col-md-6 small-font">{{quality.timestamp | date:'short'}}</span>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-6 font-bold text-color align-center sub-heading">
+            <span class="col-md-12 border-bottom">Temperature Readings</span>
+            <div class="col-md-6 font-bold text-color align-center sub-heading">
+              <span class="small-font">Temperature</span>
+            </div>
+            <div class="col-md-6 font-bold text-color align-center sub-heading">
+              <span class="small-font">Timestamp</span>
+            </div>
+            <div class="col-md-12 font-bold text-color align-center sub-heading">
+              <span *ngFor="let temp of asset.temperatureReadings">
+                <span class="col-md-6 small-font">{{temp.centigrade}}</span>
+                <span class="col-md-6 small-font">{{temp.timestamp | date:'short'}}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
 </div>

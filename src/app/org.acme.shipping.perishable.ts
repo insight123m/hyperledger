@@ -15,11 +15,24 @@ import {Event} from './org.hyperledger.composer.system';
       IN_TRANSIT,
       ARRIVED,
    }
+   export enum ShipmentQuality {
+      EXCELLENT,
+      GOOD,
+      AVERAGE,
+      BAD,
+   }
    export abstract class ShipmentTransaction extends Transaction {
       shipment: Shipment;
    }
    export class TemperatureReading extends ShipmentTransaction {
       centigrade: number;
+      shipmentId: string;
+      timestamp: Date;
+   }
+   export class QualityReading extends ShipmentTransaction {
+      quality: ShipmentQuality;
+      shipmentId: string;
+      timestamp: Date;
    }
    export class ShipmentReceived extends ShipmentTransaction {
    }
@@ -27,6 +40,7 @@ import {Event} from './org.hyperledger.composer.system';
       shipmentId: string;
       type: ProductType;
       status: ShipmentStatus;
+      qualityReadings: QualityReading[];
       unitCount: number;
       temperatureReadings: TemperatureReading[];
       contract: Contract;
@@ -42,6 +56,8 @@ import {Event} from './org.hyperledger.composer.system';
       maxTemperature: number;
       minPenaltyFactor: number;
       maxPenaltyFactor: number;
+      delayPenaltyFactor: number;
+      qualityPenaltyFactor: number;
    }
    export class Address {
       city: string;

@@ -8,11 +8,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class ContractService {
 
-	
 		private NAMESPACE: string = 'Contract';
-	
-
-
 
     constructor(private dataService: DataService<Contract>) {
     };

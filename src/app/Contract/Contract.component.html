@@ -7,110 +7,54 @@
       </div>
       <form [formGroup]="myForm">
         <div class="modal-body">
-
-
-          
-
-            
               <div class="form-group text-left">
                 <label for="contractId">contractId</label>
-                
                   <input formControlName="contractId" type="text" class="form-control">
-                
               </div>
-            
-          
-
-            
               <div class="form-group text-left">
                 <label for="grower">grower</label>
-                
                     <textarea formControlName="grower" class="form-control" rows="3"></textarea>
-                
               </div>
-            
-          
-
-            
               <div class="form-group text-left">
                 <label for="shipper">shipper</label>
-                
                     <textarea formControlName="shipper" class="form-control" rows="3"></textarea>
-                
               </div>
-            
-          
-
-            
               <div class="form-group text-left">
                 <label for="importer">importer</label>
-                
                     <textarea formControlName="importer" class="form-control" rows="3"></textarea>
-                
               </div>
-            
-          
-
-            
               <div class="form-group text-left">
                 <label for="arrivalDateTime">arrivalDateTime</label>
-                
                   <input formControlName="arrivalDateTime" type="text" class="form-control">
-                
               </div>
-            
-          
-
-            
               <div class="form-group text-left">
                 <label for="unitPrice">unitPrice</label>
-                
                   <input formControlName="unitPrice" type="number" step='any' class="form-control">
-                
               </div>
-            
-          
-
-            
               <div class="form-group text-left">
                 <label for="minTemperature">minTemperature</label>
-                
                   <input formControlName="minTemperature" type="number" step='any' class="form-control">
-                
               </div>
-            
-          
-
-            
               <div class="form-group text-left">
                 <label for="maxTemperature">maxTemperature</label>
-                
                   <input formControlName="maxTemperature" type="number" step='any' class="form-control">
-                
               </div>
-            
-          
-
-            
               <div class="form-group text-left">
                 <label for="minPenaltyFactor">minPenaltyFactor</label>
-                
                   <input formControlName="minPenaltyFactor" type="number" step='any' class="form-control">
-                
               </div>
-            
-          
-
-            
               <div class="form-group text-left">
                 <label for="maxPenaltyFactor">maxPenaltyFactor</label>
-                
                   <input formControlName="maxPenaltyFactor" type="number" step='any' class="form-control">
-                
               </div>
-            
-          
-
+              <div class="form-group text-left">
+                <label for="delayPenaltyFactor">delayPenaltyFactor</label>
+                  <input formControlName="delayPenaltyFactor" type="number" step='any' class="form-control">
+              </div>
+              <div class="form-group text-left">
+                <label for="qualityPenaltyFactor">qualityPenaltyFactor</label>
+                  <input formControlName="qualityPenaltyFactor" type="number" step='any' class="form-control">
+              </div>
         </div>
         <div class="modal-footer">
           <button (click)="addAsset(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
@@ -121,9 +65,6 @@
   </div>
 </div>
 
-
-
-
 <div class="modal fade" id="updateAssetModal" tabindex="-1" role="dialog" aria-labelledby="updateAssetModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -133,107 +74,54 @@
       </div>
       <form [formGroup]="myForm">
         <div class="modal-body">
-
-
-          
             <div class="form-group text-left">
               <label for="contractId">contractId</label>
-
-              
                 <input [ngModel]="contractId"formControlName="contractId" type="text" class="form-control">
-              
-
             </div>
-          
             <div class="form-group text-left">
               <label for="grower">grower</label>
-
-              
-                
                   <textarea [ngModel]="grower" formControlName="grower" class="form-control" rows="3"></textarea>
-                
-              
-
             </div>
-          
             <div class="form-group text-left">
               <label for="shipper">shipper</label>
-
-              
-                
                   <textarea [ngModel]="shipper" formControlName="shipper" class="form-control" rows="3"></textarea>
-                
-              
-
             </div>
-          
             <div class="form-group text-left">
               <label for="importer">importer</label>
-
-              
-                
                   <textarea [ngModel]="importer" formControlName="importer" class="form-control" rows="3"></textarea>
-                
-              
-
             </div>
-          
             <div class="form-group text-left">
               <label for="arrivalDateTime">arrivalDateTime</label>
-
-              
                 <input [ngModel]="arrivalDateTime"formControlName="arrivalDateTime" type="text" class="form-control">
-              
-
             </div>
-          
             <div class="form-group text-left">
               <label for="unitPrice">unitPrice</label>
-
-              
                 <input [ngModel]="unitPrice" formControlName="unitPrice" type="number" step='any' class="form-control">
-              
-
             </div>
-          
             <div class="form-group text-left">
               <label for="minTemperature">minTemperature</label>
-
-              
                 <input [ngModel]="minTemperature" formControlName="minTemperature" type="number" step='any' class="form-control">
-              
-
             </div>
-          
             <div class="form-group text-left">
               <label for="maxTemperature">maxTemperature</label>
-
-              
                 <input [ngModel]="maxTemperature" formControlName="maxTemperature" type="number" step='any' class="form-control">
-              
-
             </div>
-          
             <div class="form-group text-left">
               <label for="minPenaltyFactor">minPenaltyFactor</label>
-
-              
                 <input [ngModel]="minPenaltyFactor" formControlName="minPenaltyFactor" type="number" step='any' class="form-control">
-              
-
             </div>
-          
             <div class="form-group text-left">
               <label for="maxPenaltyFactor">maxPenaltyFactor</label>
-
-              
                 <input [ngModel]="maxPenaltyFactor" formControlName="maxPenaltyFactor" type="number" step='any' class="form-control">
-              
-
             </div>
-          
-
-
+            <div class="form-group text-left">
+              <label for="delayPenaltyFactor">delayPenaltyFactor</label>
+                <input [ngModel]="delayPenaltyFactor" formControlName="delayPenaltyFactor" type="number" step='any' class="form-control">
+            </div>
+            <div class="form-group text-left">
+              <label for="qualityPenaltyFactor">qualityPenaltyFactor</label>
+                <input [ngModel]="qualityPenaltyFactor" formControlName="qualityPenaltyFactor" type="number" step='any' class="form-control">
+            </div>
         </div>
         <div class="modal-footer">
           <button (click)="updateAsset(myForm)" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
@@ -243,8 +131,6 @@
     </div>
   </div>
 </div>
-
-
 
 <div class="modal fade" id="deleteAssetModal" tabindex="-1" role="dialog" aria-labelledby="deleteAssetModalLabel">
   <div class="modal-dialog" role="document">
@@ -266,16 +152,6 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
 <div class="container">
 	<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
 		<strong>Error:</strong> {{errorMessage}}
@@ -287,67 +163,50 @@
     </div>
   </div>
   <br>
-  <div class="row">
-    <div class="col-md-12">
-      <table class="table table-bordered table-responsive table-striped">
-        <thead class="thead">
-          <tr class="thead-cols">
-            
-                <th class="info">contractId</th>
-            
-                <th class="info">grower</th>
-            
-                <th class="info">shipper</th>
-            
-                <th class="info">importer</th>
-            
-                <th class="info">arrivalDateTime</th>
-            
-                <th class="info">unitPrice</th>
-            
-                <th class="info">minTemperature</th>
-            
-                <th class="info">maxTemperature</th>
-            
-                <th class="info">minPenaltyFactor</th>
-            
-                <th class="info">maxPenaltyFactor</th>
-            
-              <th class="info">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let asset of allAssets">
-
-            
-                <td>{{asset.contractId}}</td>
-            
-                <td>{{asset.grower}}</td>
-            
-                <td>{{asset.shipper}}</td>
-            
-                <td>{{asset.importer}}</td>
-            
-                <td>{{asset.arrivalDateTime}}</td>
-            
-                <td>{{asset.unitPrice}}</td>
-            
-                <td>{{asset.minTemperature}}</td>
-            
-                <td>{{asset.maxTemperature}}</td>
-            
-                <td>{{asset.minPenaltyFactor}}</td>
-            
-                <td>{{asset.maxPenaltyFactor}}</td>
-            
-            <td>
-              <button (click)="getForm(asset.contractId);" type="button" class="btn btn-success" data-toggle="modal" data-target="#updateAssetModal">Update Asset</button>
-
-              <button (click)="setId(asset.contractId);" type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteAssetModal">Delete Asset</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <ngb-accordion #acc="ngbAccordion">
+    <ngb-panel *ngFor="let asset of allAssets">
+      <ng-template ngbPanelTitle>
+        <div class="item-border" (click)="getContractByShipment(asset.shipmentId);">
+          <div class="col-md-2 font-bold text-color">
+            {{asset.contractId}}
+          </div>
+          <div class="col-md-2 font-bold text-color">
+            {{asset.grower.split('resource:org.acme.shipping.perishable.Grower#')[1]}}
+          </div>
+          <div class="col-md-2 font-bold text-color">
+            {{asset.shipper.split('resource:org.acme.shipping.perishable.Shipper#')[1]}}
+          </div>
+          <div class="col-md-2 font-bold text-color">
+            {{asset.importer.split('resource:org.acme.shipping.perishable.Importer#')[1]}}
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <div class="block-size">
+          <div class="col-md-12 font-bold text-color sub-heading">
+            <div class="font-bold text-color align-center sub-heading">
+              <span class="col-md-3 small-font">Contract ID: </span>
+              <span class="col-md-3 small-font">{{asset.contractId}}</span>
+              <span class="col-md-3 small-font">Minimum Temp: </span>
+              <span class="col-md-3 small-font">{{asset.minTemperature}}</span>
+              <span class="col-md-3 small-font">Maximum Temp: </span>
+              <span class="col-md-3 small-font">{{asset.maxTemperature}}</span>
+              <span class="col-md-3 small-font">Min Penalty: </span>
+              <span class="col-md-3 small-font">{{asset.minPenaltyFactor}}</span>
+              <span class="col-md-3 small-font">Max Penalty: </span>
+              <span class="col-md-3 small-font">{{asset.maxPenaltyFactor}}</span>
+              <span class="col-md-3 small-font">Quality Penalty: </span>
+              <span class="col-md-3 small-font">{{asset.qualityPenaltyFactor}}</span>
+              <span class="col-md-3 small-font">Grower: </span>
+              <span class="col-md-3 small-font">{{asset.grower.split('resource:org.acme.shipping.perishable.Grower#')[1]}}</span>
+              <span class="col-md-3 small-font">Importer: </span>
+              <span class="col-md-3 small-font">{{asset.importer.split('resource:org.acme.shipping.perishable.Importer#')[1]}}</span>
+              <span class="col-md-3 small-font">Shipper: </span>
+              <span class="col-md-3 small-font">{{asset.shipper.split('resource:org.acme.shipping.perishable.Shipper#')[1]}}</span>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
 </div>

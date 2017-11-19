@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+.item-border {
+  border-radius: 5px;
+  border: 2px solid green;
+  height: 50px;
+  padding: 10px;
+  margin: 2px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid black;
+}
+
+.block-size {
+  height: 400px;
+}
+
+.float-right {
+  float: right !important;
+}
+
+.float-left {
+  float: left !important;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.sub-heading {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-color {
+  color: #333 !important;
+}
+
+.small-font {
+  font-weight: normal !important;
+  font-size: 15px !important;
+  color: gray;
+}

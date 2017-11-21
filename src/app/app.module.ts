@@ -13,6 +13,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ShipmentComponent } from './Shipment/Shipment.component';
 import { ContractComponent } from './Contract/Contract.component';
+import { ShipperComponent } from './shipper/shipper.component';
+import { GrowerComponent } from './grower/grower.component';
+import { ImporterComponent } from './importer/importer.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +23,10 @@ import { ContractComponent } from './Contract/Contract.component';
 		HomeComponent,
     // TransactionComponent,
     ShipmentComponent,
-
-    ContractComponent
+    ContractComponent,
+    ShipperComponent,
+    GrowerComponent,
+    ImporterComponent
 
   ],
   imports: [

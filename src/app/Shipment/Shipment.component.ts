@@ -27,7 +27,6 @@ export class ShipmentComponent implements OnInit {
   contract = new FormControl("", Validators.required);
 	shipmentQuality = new FormControl("", Validators.required);
 	tempReading = new FormControl("", Validators.required);
-	timestamp = new FormControl("", Validators.required);
 
   constructor(private serviceShipment:ShipmentService, private serviceContract:ContractService, fb: FormBuilder) {
     this.myForm = fb.group({
@@ -40,14 +39,12 @@ export class ShipmentComponent implements OnInit {
       contract:this.contract
     });
 		this.tempReadingForm = fb.group({
-			shipmentId:this.shipmentId,
-      quality: this.shipmentQuality,
-      timestamp: this.timestamp
+			shipment:this.shipmentId,
+      tempReading: this.tempReading
     });
 		this.qualityReadingForm = fb.group({
-			shipmentId:this.shipmentId,
-      temp: this.tempReading,
-      timestamp: this.timestamp
+			shipment:this.shipmentId,
+      shipmentQuality: this.shipmentQuality
     });
   };
 
@@ -129,9 +126,8 @@ export class ShipmentComponent implements OnInit {
 
 	addQualityReading(form: any): Promise<any> {
 		return this.serviceShipment.addQualityReading({
-			shipmentId:this.shipmentId,
-      quality: this.shipmentQuality,
-      timestamp: this.timestamp
+			shipment:this.currentId,
+      quality: this.shipmentQuality.value
 		})
     .toPromise()
     .then(() => {
@@ -149,9 +145,26 @@ export class ShipmentComponent implements OnInit {
 	addTempReading(form: any): Promise<any> {
 		return this.serviceShipment.addTempReading({
 			$class: "org.acme.shipping.perishable.TemperatureReading",
-			shipmentId:this.shipmentId,
-      centigrade: this.tempReading,
-      timestamp: this.timestamp
+			shipment:this.currentId,
+      centigrade: this.tempReading.value
+		})
+    .toPromise()
+    .then(() => {
+			this.errorMessage = null;
+    })
+    .catch((error) => {
+      if(error == 'Server error'){
+        this.errorMessage = "Could not connect to REST server. Please check your configuration details";
+      } else{
+        this.errorMessage = error;
+      }
+    });
+	}
+
+	shipmentReceived(form: any): Promise<any> {
+		return this.serviceShipment.shipmentReceived({
+			$class: "org.acme.shipping.perishable.ShipmentReceived",
+			shipment:this.currentId
 		})
     .toPromise()
     .then(() => {

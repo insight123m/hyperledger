@@ -166,7 +166,7 @@
   <ngb-accordion #acc="ngbAccordion">
     <ngb-panel *ngFor="let asset of allAssets">
       <ng-template ngbPanelTitle>
-        <div class="item-border" (click)="getContractByShipment(asset.shipmentId);">
+        <div class="item-border border-green" (click)="getContractByShipment(asset.shipmentId);">
           <div class="col-md-2 font-bold text-color">
             {{asset.contractId}}
           </div>

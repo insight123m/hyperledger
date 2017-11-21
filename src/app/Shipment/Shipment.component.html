@@ -124,10 +124,6 @@
       </div>
       <form [formGroup]="qualityReadingForm">
         <div class="modal-body">
-          <div class="form-group text-left">
-            <label for="shipmentId">shipmentId</label>
-              <input formControlName="shipmentId" type="text" class="form-control">
-          </div>
           <label for="shipmentQuality">quality</label>
           <div class="checkbox">
             <label>
@@ -177,8 +173,28 @@
   </div>
 </div>
 
-
-
+<div class="modal fade" id="addTemperatureReadingModal" tabindex="-1" role="dialog" aria-labelledby="addTemperatureReadingModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addAssetModalLabel">Add Temperature Reading</h4>
+      </div>
+      <form [formGroup]="tempReadingForm">
+        <div class="modal-body">
+          <div class="form-group text-left">
+            <label for="tempReading">temperatureReading</label>
+            <input formControlName="tempReading" type="number" class="form-control">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button (click)="addTempReading(tempReadingForm);" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <div class="modal fade" id="updateAssetModal" tabindex="-1" role="dialog" aria-labelledby="updateAssetModalLabel">
   <div class="modal-dialog" role="document">
@@ -189,204 +205,122 @@
       </div>
       <form [formGroup]="myForm">
         <div class="modal-body">
-
-
-
             <div class="form-group text-left">
               <label for="shipmentId">shipmentId</label>
-
-
                 <input [ngModel]="shipmentId"formControlName="shipmentId" type="text" class="form-control">
-
-
             </div>
-
             <div class="form-group text-left">
               <label for="type">type</label>
-
-
-
                   <div class="row">
                     <div class="col-xs-12 checkbox">
-
                       <label>
                         <input
-
                             formControlName="type"
                             [ngModel]="type"
-
                           name="type"
                           value="BANANAS"
                           type="radio"
-
                         />
                         BANANAS
                       </label>
-
                       <label>
                         <input
-
                             formControlName="type"
                             [ngModel]="type"
-
                           name="type"
                           value="APPLES"
                           type="radio"
-
                         />
                         APPLES
                       </label>
-
                       <label>
                         <input
-
                             formControlName="type"
                             [ngModel]="type"
-
                           name="type"
                           value="PEARS"
                           type="radio"
-
                         />
                         PEARS
                       </label>
-
                       <label>
                         <input
-
                             formControlName="type"
                             [ngModel]="type"
-
                           name="type"
                           value="PEACHES"
                           type="radio"
-
                         />
                         PEACHES
                       </label>
-
                       <label>
                         <input
-
                             formControlName="type"
                             [ngModel]="type"
-
                           name="type"
                           value="COFFEE"
                           type="radio"
-
                         />
                         COFFEE
                       </label>
-
                     </div>
                   </div>
-
-
-
             </div>
-
             <div class="form-group text-left">
               <label for="status">status</label>
-
-
-
                   <div class="row">
                     <div class="col-xs-12 checkbox">
 
                       <label>
                         <input
-
                             formControlName="status"
                             [ngModel]="status"
-
                           name="status"
                           value="CREATED"
                           type="radio"
-
                         />
                         CREATED
                       </label>
-
                       <label>
                         <input
-
                             formControlName="status"
                             [ngModel]="status"
-
                           name="status"
                           value="IN_TRANSIT"
                           type="radio"
-
                         />
                         IN_TRANSIT
                       </label>
-
                       <label>
                         <input
-
                             formControlName="status"
                             [ngModel]="status"
-
                           name="status"
                           value="ARRIVED"
                           type="radio"
-
                         />
                         ARRIVED
                       </label>
 
                     </div>
                   </div>
-
-
-
             </div>
-
             <div class="form-group text-left">
               <label for="qualityReadings">qualityReadings</label>
-
-
-
                   <textarea [ngModel]="qualityReadings" formControlName="qualityReadings" class="form-control" rows="3"></textarea>
-
-
-
             </div>
-
             <div class="form-group text-left">
               <label for="unitCount">unitCount</label>
-
-
                 <input [ngModel]="unitCount" formControlName="unitCount" type="number" class="form-control">
-
-
             </div>
-
             <div class="form-group text-left">
               <label for="temperatureReadings">temperatureReadings</label>
-
-
-
                   <textarea [ngModel]="temperatureReadings" formControlName="temperatureReadings" class="form-control" rows="3"></textarea>
-
-
-
             </div>
-
             <div class="form-group text-left">
               <label for="contract">contract</label>
-
-
-
                   <textarea [ngModel]="contract" formControlName="contract" class="form-control" rows="3"></textarea>
-
-
-
             </div>
-
-
-
         </div>
         <div class="modal-footer">
           <button (click)="updateAsset(myForm)" type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
@@ -433,7 +367,10 @@
   <ngb-accordion #acc="ngbAccordion">
     <ngb-panel *ngFor="let asset of allAssets">
       <ng-template ngbPanelTitle>
-        <div class="item-border cursor-pointer" (click)="getContractByShipment(asset.shipmentId);">
+        <div class="item-border cursor-pointer"
+          [class.border-green]="asset.status === 'ARRIVED'"
+          [class.border-blue]="asset.status === 'CREATED'"
+          [class.border-red]="asset.status === 'IN_TRANSIT'">
           <div class="col-md-2 font-bold text-color">
             {{asset.shipmentId}}
           </div>
@@ -446,6 +383,7 @@
           <div class="col-md-1 float-right font-bold">
             <i class="fa fa-pencil fa-lg text-color" (click)="getForm(asset.shipmentId);" data-toggle="modal" data-target="#updateAssetModal" aria-hidden="true"> </i>
             <i class="fa fa-trash fa-lg text-color" (click)="setId(asset.shipmentId);" data-toggle="modal" data-target="#deleteAssetModal" aria-hidden="true"> </i>
+            <i class="fa fa-handshake-o fa-lg text-color" (click)="setId(asset.shipmentId); shipmentReceived();" aria-hidden="true"> </i>
           </div>
         </div>
       </ng-template>
@@ -477,7 +415,7 @@
           <div class="col-md-6 font-bold text-color align-center sub-heading">
             <span class="col-md-12 border-bottom">
               Quality Readings
-              <i class="fa fa-pencil fa-plus-circle text-color" data-toggle="modal" data-target="#addQualityReadingModal" aria-hidden="true"> </i>
+              <i class="fa fa-pencil fa-plus-circle text-color" (click)="setId(asset.shipmentId);" data-toggle="modal" data-target="#addQualityReadingModal" aria-hidden="true"> </i>
             </span>
             <div class="col-md-6 font-bold text-color align-center sub-heading">
               <span class="small-font">Quality</span>
@@ -493,7 +431,10 @@
             </div>
           </div>
           <div class="col-md-6 font-bold text-color align-center sub-heading">
-            <span class="col-md-12 border-bottom">Temperature Readings</span>
+            <span class="col-md-12 border-bottom">
+              Temperature Readings
+              <i class="fa fa-pencil fa-plus-circle text-color" (click)="setId(asset.shipmentId);" data-toggle="modal" data-target="#addTemperatureReadingModal" aria-hidden="true"> </i>
+            </span>
             <div class="col-md-6 font-bold text-color align-center sub-heading">
               <span class="small-font">Temperature</span>
             </div>

@@ -1,9 +1,20 @@
 .item-border {
   border-radius: 5px;
-  border: 2px solid green;
   height: 50px;
   padding: 10px;
   margin: 2px;
+}
+
+.border-green {
+  border: 2px solid green;
+}
+
+.border-red {
+  border: 2px solid red;
+}
+
+.border-blue {
+  border: 2px solid blue;
 }
 
 .border-bottom {
